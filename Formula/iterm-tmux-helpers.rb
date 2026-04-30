@@ -54,7 +54,7 @@ class ItermTmuxHelpers < Formula
     end
 
     # Stash docs alongside for `brew home` / share inspection
-    pkgshare.install "README.md"
+    pkgshare.install "README.md" if File.exist?("README.md")
     pkgshare.install "AGENTS.md" if File.exist?("AGENTS.md")
     pkgshare.install "BEHAVIOR.md" if File.exist?("BEHAVIOR.md")
     pkgshare.install "TODO.md" if File.exist?("TODO.md")
@@ -96,5 +96,10 @@ class ItermTmuxHelpers < Formula
     system libexec/"bin/python", "-c",
            "import sys; sys.path.insert(0, '#{libexec}'); " \
            "import _version_check; _version_check.warn_if_versions_unverified()"
+
+    # Smoke-test 4: the venv actually has iterm2 importable. The whole
+    # point of the venv is to bundle this dep — if `pip_install resources`
+    # silently failed or shipped a broken wheel, we must catch it here.
+    system libexec/"bin/python", "-c", "import iterm2"
   end
 end
