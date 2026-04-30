@@ -3,8 +3,8 @@ class ItermTmuxHelpers < Formula
 
   desc "Helpers for iTerm2 + tmux integration in -CC control mode on macOS"
   homepage "https://github.com/johntrandall/iterm-tmux-helpers"
-  url "https://github.com/johntrandall/iterm-tmux-helpers/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "02bdc34124d71165b4842464c4920455ab6fa146927cec1f6a9225e395e31169"
+  url "https://github.com/johntrandall/iterm-tmux-helpers/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "c6c3a1d31711d32e737ea63aa289ad5420c986a314b859f75ea9da9a83435b53"
   license "MIT"
   head "https://github.com/johntrandall/iterm-tmux-helpers.git", branch: "main"
 
