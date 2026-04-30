@@ -46,7 +46,7 @@ class ItermTmuxHelpers < Formula
       content = File.read(path)
       content.sub!(/\A#!.*\n/, "#!#{libexec}/bin/python\n")
       content.sub!(
-        /sys\.path\.insert\(0, os\.path\.dirname\(os\.path\.realpath\(__file__\)\)\)/,
+        "sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))",
         "sys.path.insert(0, '#{libexec}')",
       )
       File.write(path, content)
