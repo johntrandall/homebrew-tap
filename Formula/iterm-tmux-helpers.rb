@@ -3,8 +3,8 @@ class ItermTmuxHelpers < Formula
 
   desc "Helpers for iTerm2 + tmux integration in -CC control mode on macOS"
   homepage "https://github.com/johntrandall/iterm-tmux-helpers"
-  url "https://github.com/johntrandall/iterm-tmux-helpers/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 "113b070b7b6f5ca761abb0215736c66a71145e7fc053756db6e8a8f9057e0823"
+  url "https://github.com/johntrandall/iterm-tmux-helpers/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "02bdc34124d71165b4842464c4920455ab6fa146927cec1f6a9225e395e31169"
   license "MIT"
   head "https://github.com/johntrandall/iterm-tmux-helpers.git", branch: "main"
 
@@ -56,6 +56,7 @@ class ItermTmuxHelpers < Formula
     # Stash docs alongside for `brew home` / share inspection
     pkgshare.install "README.md"
     pkgshare.install "AGENTS.md" if File.exist?("AGENTS.md")
+    pkgshare.install "BEHAVIOR.md" if File.exist?("BEHAVIOR.md")
     pkgshare.install "TODO.md"   if File.exist?("TODO.md")
   end
 
