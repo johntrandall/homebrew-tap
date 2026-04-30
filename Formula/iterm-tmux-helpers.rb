@@ -1,7 +1,7 @@
 class ItermTmuxHelpers < Formula
   include Language::Python::Virtualenv
 
-  desc "iTerm2 + tmux integration helpers for -CC control mode on macOS"
+  desc "Helpers for iTerm2 + tmux integration in -CC control mode on macOS"
   homepage "https://github.com/johntrandall/iterm-tmux-helpers"
   url "https://github.com/johntrandall/iterm-tmux-helpers/archive/refs/tags/v0.1.1.tar.gz"
   sha256 "92f7818f7cc61303c06093627598daa4ae2ce181d0259e201a225a9c9f8b5a84"
@@ -9,9 +9,9 @@ class ItermTmuxHelpers < Formula
   head "https://github.com/johntrandall/iterm-tmux-helpers.git", branch: "main"
 
   depends_on "fzf"
+  depends_on :macos # uses iTerm2's macOS-specific Python API
   depends_on "python@3.13"
   depends_on "tmux"
-  depends_on :macos # uses iTerm2's macOS-specific Python API
 
   resource "iterm2" do
     url "https://files.pythonhosted.org/packages/88/60/3e078e279b3142341ad359961b30d05fff73fa6fcc741861da65937edbe6/iterm2-2.15.tar.gz"
@@ -46,7 +46,7 @@ class ItermTmuxHelpers < Formula
       content = File.read(path)
       content.sub!(/\A#!.*\n/, "#!#{libexec}/bin/python\n")
       content.sub!(
-        %r{sys\.path\.insert\(0, os\.path\.dirname\(os\.path\.realpath\(__file__\)\)\)},
+        /sys\.path\.insert\(0, os\.path\.dirname\(os\.path\.realpath\(__file__\)\)\)/,
         "sys.path.insert(0, '#{libexec}')",
       )
       File.write(path, content)
