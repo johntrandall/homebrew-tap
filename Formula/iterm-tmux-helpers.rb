@@ -57,7 +57,7 @@ class ItermTmuxHelpers < Formula
     pkgshare.install "README.md"
     pkgshare.install "AGENTS.md" if File.exist?("AGENTS.md")
     pkgshare.install "BEHAVIOR.md" if File.exist?("BEHAVIOR.md")
-    pkgshare.install "TODO.md"   if File.exist?("TODO.md")
+    pkgshare.install "TODO.md" if File.exist?("TODO.md")
   end
 
   def caveats
