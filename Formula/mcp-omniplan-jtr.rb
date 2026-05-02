@@ -3,8 +3,8 @@ class McpOmniplanJtr < Formula
 
   desc "MCP server that drives OmniPlan 4 on macOS via the omniJS bridge"
   homepage "https://github.com/johntrandall/omniplan-mcp"
-  url "https://github.com/johntrandall/omniplan-mcp/archive/refs/tags/v0.4.1.tar.gz"
-  sha256 "58b451781707cd2f6181a7ae9625a80ef23826990f70c54c3a85ddb3241a5570"
+  url "https://github.com/johntrandall/omniplan-mcp/archive/refs/tags/v0.4.2.tar.gz"
+  sha256 "1e8a24a5db12e930a4957d1de0e7cfc208671333893c764a9883d13931aacffe"
   license "MIT"
   head "https://github.com/johntrandall/omniplan-mcp.git", branch: "main"
 
