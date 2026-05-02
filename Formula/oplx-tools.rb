@@ -3,8 +3,8 @@ class OplxTools < Formula
 
   desc "Generate, lint, and parse OmniPlan .oplx files (no OmniPlan needed)"
   homepage "https://github.com/johntrandall/oplx-tools"
-  url "https://github.com/johntrandall/oplx-tools/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "a99cda40e8133b47924b349744883ce09ef902231556f97f92b163c64bccc66a"
+  url "https://github.com/johntrandall/oplx-tools/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "6e54b68cae9a7aa4015125e14e9c919a91110ff4c3b77272deff22c6be24a50c"
   license "MIT"
   head "https://github.com/johntrandall/oplx-tools.git", branch: "main"
 
