@@ -1,7 +1,7 @@
 class Lash < Formula
   include Language::Python::Virtualenv
 
-  desc "Manifest-driven symlink installer (lash.json defines install + uninstall in sync)"
+  desc "Manifest-driven symlink installer with idempotent install and uninstall"
   homepage "https://github.com/johntrandall/lash"
   url "https://github.com/johntrandall/lash/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "b2369277d65c7729fcfe458be8762a3c17fc964684e8bdeeef1e715d9cfdbb5e"

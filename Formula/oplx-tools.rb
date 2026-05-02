@@ -8,7 +8,11 @@ class OplxTools < Formula
   license "MIT"
   head "https://github.com/johntrandall/oplx-tools.git", branch: "main"
 
+  depends_on "libyaml"
   depends_on "python@3.13"
+
+  uses_from_macos "libxml2"
+  uses_from_macos "libxslt"
 
   resource "lxml" do
     url "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz"
@@ -46,7 +50,7 @@ class OplxTools < Formula
     YAML
 
     system bin/"oplx", "generate", testpath/"project.yaml", "--out", testpath/"out.oplx"
-    assert_predicate testpath/"out.oplx", :exist?
+    assert_path_exists testpath/"out.oplx"
 
     lint_output = shell_output("#{bin}/oplx lint #{testpath}/out.oplx")
     assert_match "no findings", lint_output
