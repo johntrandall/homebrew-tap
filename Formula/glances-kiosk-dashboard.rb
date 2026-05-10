@@ -16,10 +16,8 @@ class GlancesKioskDashboard < Formula
     # DR-001: pin to Apple system Python (stdlib only). Avoid surprises if a
     # Homebrew Python ends up first in PATH at launchd-spawn time.
     %w[server.py speedtest-runner.py].each do |script|
-      path = libexec/script
-      content = path.read.sub(/\A#!.*\n/, "#!/usr/bin/python3\n")
-      path.write content
-      chmod 0755, path
+      inreplace libexec/script, %r{\A#!.*\n}, "#!/usr/bin/python3\n"
+      chmod 0755, libexec/script
     end
 
     # speedtest-runner.py hardcodes /opt/homebrew/bin/speedtest. Repoint to
