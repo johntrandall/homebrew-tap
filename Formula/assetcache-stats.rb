@@ -39,7 +39,7 @@ class AssetcacheStats < Formula
     assert_predicate bin/"assetcache-stats", :executable?
     # On macs without Content Caching activated (or without sudo to AssetCacheManagerUtil),
     # the script still emits exactly one row containing the measurement name + activated=0i.
-    output = shell_output("#{bin}/assetcache-stats")
+    output = shell_output(bin/"assetcache-stats")
     assert_match "content_caching", output
     assert_match "activated=", output
     # Single line of output
