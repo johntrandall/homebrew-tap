@@ -20,7 +20,7 @@ class Hither < Formula
   def install
     bin.install "bin/hither"
     libexec.install Dir["libexec/*"]
-    pkgshare.install "bootstrap", "launchd", "sbin", "sudoers", "scripts", "completions"
+    pkgshare.install "bootstrap", "launchd", "sbin", "sudoers", "scripts"
 
     # Bash and zsh completions go in the standard Homebrew locations so
     # they're discovered automatically by `brew shellenv`-configured shells.
