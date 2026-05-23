@@ -9,9 +9,9 @@
 class Hither < Formula
   desc "Lazy mounter for personal Mac SMB fleets — autofs + DSM + Keychain"
   homepage "https://github.com/johntrandall/hither"
-  url "https://github.com/johntrandall/hither/archive/refs/tags/v0.5.5.tar.gz"
-  version "0.5.5"
-  sha256 "c5af7fbb90c8c841466d2d021d4c4464fab110b8a1ce6026929fd6e32ba220bd"
+  url "https://github.com/johntrandall/hither/archive/refs/tags/v0.5.6.tar.gz"
+  version "0.5.6"
+  sha256 "91524884bcbd54804dc9524d4d5c879d22b4c793192d2c6862ad3249aa796d2c"
   license "MIT"
 
   depends_on "jq" # ships with macOS 15.0+ but pin for safety
