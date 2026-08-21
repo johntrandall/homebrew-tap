@@ -3,8 +3,8 @@ class HalfSheetLabel < Formula
 
   desc "Impose a shipping label PDF onto half-sheet 2-up stock and print it"
   homepage "https://github.com/johntrandall/half-sheet-label"
-  url "https://github.com/johntrandall/half-sheet-label/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "068690fc29a2a047f795a57e147b89d91c411875587284571634ad27343aca58"
+  url "https://github.com/johntrandall/half-sheet-label/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "75a88c89e5f933c942499e3f9f3bd5db6a6600c41fdc39b4841429373d230d95"
   license "MIT"
   head "https://github.com/johntrandall/half-sheet-label.git", branch: "main"
 
