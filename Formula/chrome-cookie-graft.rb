@@ -1,11 +1,11 @@
 class ChromeCookieGraft < Formula
   desc "Copy session cookies between Chrome profiles, holding back identity hosts"
-  homepage "https://forgejo-umbridge/dev/chrome-cookie-graft"
-  # Local release tarball. Repoint at a GitHub/Forgejo release URL to distribute.
-  url "file://#{Dir.home}/dev/homebrew-tap/dist/chrome-cookie-graft-0.1.2.tar.gz"
-  sha256 "cce58867e6fbbaa96975801a501befdd0562df84328863f772ce4aeca1458f8c"
+  homepage "https://github.com/johntrandall/chrome-cookie-graft"
+  url "https://github.com/johntrandall/chrome-cookie-graft/archive/refs/tags/v0.1.3.tar.gz"
+  sha256 "dcb41f0da398bcc338cb14461e2d11e021573eb383f6ce6832a5346fdf38465f"
   license "MIT"
-  version "0.1.2"
+  head "https://github.com/johntrandall/chrome-cookie-graft.git", branch: "main"
+  version "0.1.3"
 
   depends_on :macos
 
