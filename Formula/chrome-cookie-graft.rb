@@ -1,11 +1,11 @@
 class ChromeCookieGraft < Formula
   desc "Copy session cookies between Chrome profiles, holding back identity hosts"
   homepage "https://github.com/johntrandall/chrome-cookie-graft"
-  url "https://github.com/johntrandall/chrome-cookie-graft/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "dcb41f0da398bcc338cb14461e2d11e021573eb383f6ce6832a5346fdf38465f"
+  url "https://github.com/johntrandall/chrome-cookie-graft/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "53539dca2649bef6df194ceaa2ad350e704f0c55049431b1ce47c7b7895594f7"
   license "MIT"
   head "https://github.com/johntrandall/chrome-cookie-graft.git", branch: "main"
-  version "0.1.3"
+  version "0.2.0"
 
   depends_on :macos
 
@@ -30,7 +30,9 @@ class ChromeCookieGraft < Formula
     # Without it Homebrew writes RunAtLoad only -- the job fires once at login
     # and never again, while still looking like a daily service.
     run_type :interval
-    interval 86400
+    # Every 5 min; the tool's min_interval_minutes (default 60 in the seeded
+    # config) debounces, so runs are cheap and catch moments Chrome is quit.
+    interval 300
     run_at_load true
     log_path "#{Dir.home}/Library/Logs/chrome-cookie-graft.log"
     error_log_path "#{Dir.home}/Library/Logs/chrome-cookie-graft.log"
