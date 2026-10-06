@@ -3,8 +3,8 @@ class ClaudeBrowser < Formula
 
   desc "One throwaway, pre-signed-in Chrome instance per Claude Code session"
   homepage "https://github.com/johntrandall/claude-browser"
-  url "https://github.com/johntrandall/claude-browser/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "787827d0d404f773d3930a27f91889bc5627e149ed37e5eeb17adaa289d86670"
+  url "https://github.com/johntrandall/claude-browser/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "1f461318fee08aa81488788f038a8953d9a1c96d523ab1a94884caf0401e7f49"
   license "MIT"
   head "https://github.com/johntrandall/claude-browser.git", branch: "main"
 
@@ -19,6 +19,17 @@ class ClaudeBrowser < Formula
     rewrite_shebang detected_python_shebang, libexec/"claude-browser"
     bin.install_symlink libexec/"claude-browser"
     pkgshare.install "hooks", "tests"
+  end
+
+  service do
+    # Backstop teardown: detach agents whose process has exited and remove
+    # browsers that are dead, unattached, abandoned or idle. Every 15 min.
+    run [opt_bin/"claude-browser", "gc"]
+    run_type :interval
+    interval 900
+    log_path "#{Dir.home}/Library/Logs/claude-browser-gc.log"
+    error_log_path "#{Dir.home}/Library/Logs/claude-browser-gc.log"
+    environment_variables PATH: std_service_path_env
   end
 
   def caveats
@@ -36,6 +47,9 @@ class ClaudeBrowser < Formula
         claude-browser template pair <account>
 
       Per-instance Dock icons need Pillow (install uv, or pip install pillow).
+
+      Backstop cleanup of idle or abandoned agent browsers (every 15 min):
+        brew services start claude-browser
     EOS
   end
 
