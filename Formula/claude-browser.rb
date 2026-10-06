@@ -3,8 +3,8 @@ class ClaudeBrowser < Formula
 
   desc "One throwaway, pre-signed-in Chrome instance per Claude Code session"
   homepage "https://github.com/johntrandall/claude-browser"
-  url "https://github.com/johntrandall/claude-browser/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "eb7ea65c3d03baaa18382e713a7afe36b61d69447014f50dad67d83f1b8dd3d4"
+  url "https://github.com/johntrandall/claude-browser/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "ba8ff2b78538603ec18a3bf0ebe6f9ee04155e1b252ba6ef1e02f51f106ece03"
   license "MIT"
   head "https://github.com/johntrandall/claude-browser.git", branch: "main"
 
