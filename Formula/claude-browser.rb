@@ -2,11 +2,11 @@ class ClaudeBrowser < Formula
   include Language::Python::Shebang
 
   desc "One throwaway, pre-signed-in Chrome instance per Claude Code session"
-  homepage "https://github.com/johntrandall/claude-browser"
-  url "https://github.com/johntrandall/claude-browser/archive/refs/tags/v0.3.2.tar.gz"
-  sha256 ""
+  homepage "https://github.com/johntrandall/claude-browser-pool"
+  url "https://github.com/johntrandall/claude-browser-pool/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "f38dce3233bc5b6c564eb4fcfc85062514b16898ca137bad3c5bf05abb3cf7c1"
   license "MIT"
-  head "https://github.com/johntrandall/claude-browser.git", branch: "main"
+  head "https://github.com/johntrandall/claude-browser-pool.git", branch: "main"
 
   depends_on "fileicon"
   depends_on "johntrandall/tap/chrome-cookie-graft"
