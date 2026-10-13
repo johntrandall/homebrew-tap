@@ -8,6 +8,7 @@ class ObsidianVaultSetup < Formula
   license "MIT"
   head "https://github.com/johntrandall/obsidian-vault-setup.git", branch: "main"
 
+  depends_on "libyaml"
   depends_on :macos # drives Obsidian.app through its CLI; Finder button via osacompile
   depends_on "python@3.14"
 
