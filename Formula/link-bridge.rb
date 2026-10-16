@@ -19,7 +19,7 @@ class LinkBridge < Formula
     python = formula_opt_bin("python@3.14")/"python3.14"
     script.write File.read("bin/link-bridge").sub(/\A#!.*\n/, "#!#{python} -I\n")
     chmod 0755, script
-    chmod 0755, libexec/"handler/install.sh", libexec/"frontdoor/install.sh", libexec/"frontdoor/uninstall.sh"
+    %w[handler/install.sh frontdoor/install.sh frontdoor/uninstall.sh].each { |f| chmod 0755, libexec/f }
     bin.install_symlink script
     pkgshare.install "README.md"
   end
