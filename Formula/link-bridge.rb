@@ -1,8 +1,8 @@
 class LinkBridge < Formula
   desc "Local pages that turn a web link into an app link (Obsidian, Finder, vaults)"
   homepage "https://github.com/johntrandall/link-bridge"
-  url "https://github.com/johntrandall/link-bridge/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "159ad185463110502a9641f2192a6c0919d7b079594194e901937ce4f73dfed5"
+  url "https://github.com/johntrandall/link-bridge/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "5e5e9ee553aefcad76186cad0607575af4c2382143f56191d8c043ac091b1a65"
   license "MIT"
   head "https://github.com/johntrandall/link-bridge.git", branch: "main"
 
@@ -13,13 +13,13 @@ class LinkBridge < Formula
     # The script finds public/ and handler/ one level above itself, so it lives in libexec/bin
     # with public/ and handler/ beside it (same shape as the repo), shebang on brew's python.
     # test/ sits beside handler/ because install-handler runs the decoder's tests before building.
-    libexec.install "public", "handler", "test"
+    libexec.install "public", "handler", "frontdoor", "test"
     (libexec/"bin").mkpath
     script = libexec/"bin/link-bridge"
     python = formula_opt_bin("python@3.14")/"python3.14"
     script.write File.read("bin/link-bridge").sub(/\A#!.*\n/, "#!#{python} -I\n")
     chmod 0755, script
-    chmod 0755, libexec/"handler/install.sh"
+    chmod 0755, libexec/"handler/install.sh", libexec/"frontdoor/install.sh", libexec/"frontdoor/uninstall.sh"
     bin.install_symlink script
     pkgshare.install "README.md"
   end
@@ -39,6 +39,8 @@ class LinkBridge < Formula
       /reveal links need the handler app once per Mac:
         link-bridge install-handler     # builds ~/Applications/Reveal in Finder.app
         link-bridge doctor
+      Optional, to drop the port from links (Caddy on 127.0.0.1:80 as a root daemon):
+        brew install caddy && link-bridge install-front-door
 
       /vault-setup links (open or create an Obsidian vault) need the companion tool:
         brew install johntrandall/tap/obsidian-vault-setup && obsidian-vault-setup install-finder-button
