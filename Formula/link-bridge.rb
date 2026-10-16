@@ -2,7 +2,7 @@ class LinkBridge < Formula
   desc "Local pages that turn a web link into an app link (Obsidian, Finder, vaults)"
   homepage "https://github.com/johntrandall/link-bridge"
   url "https://github.com/johntrandall/link-bridge/archive/refs/tags/v0.1.2.tar.gz"
-  sha256 ""
+  sha256 "453490a51ae390468ddc161771e6280a3ce2dba2996983284da95c97aa7578ca"
   license "MIT"
   head "https://github.com/johntrandall/link-bridge.git", branch: "main"
 
