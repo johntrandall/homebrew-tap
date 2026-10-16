@@ -1,5 +1,5 @@
 class LinkBridge < Formula
-  desc "Local pages that turn a web link into an app link (Obsidian, Finder, vault setup)"
+  desc "Local pages that turn a web link into an app link (Obsidian, Finder, vaults)"
   homepage "https://github.com/johntrandall/link-bridge"
   url "https://github.com/johntrandall/link-bridge/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "db89c25f68c29e87d43c61fb7823d7728b54e953f34edc01b73c5853ca5365ee"
@@ -16,7 +16,7 @@ class LinkBridge < Formula
     libexec.install "public", "handler", "test"
     (libexec/"bin").mkpath
     script = libexec/"bin/link-bridge"
-    python = Formula["python@3.14"].opt_bin/"python3.14"
+    python = formula_opt_bin("python@3.14")/"python3.14"
     script.write File.read("bin/link-bridge").sub(/\A#!.*\n/, "#!#{python} -I\n")
     chmod 0755, script
     chmod 0755, libexec/"handler/install.sh"
