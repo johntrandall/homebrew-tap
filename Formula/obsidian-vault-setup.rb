@@ -3,8 +3,8 @@ class ObsidianVaultSetup < Formula
 
   desc "Make any folder an Obsidian vault with your plugin roster, via Obsidian's CLI"
   homepage "https://github.com/johntrandall/obsidian-vault-setup"
-  url "https://github.com/johntrandall/obsidian-vault-setup/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "1bc5f1a2ba21a1f17619c051346ec04b144aa5f68c88388e9210e11479dc80a9"
+  url "https://github.com/johntrandall/obsidian-vault-setup/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "58b7dfe4f3fc7c184b17a2cd46e8b69766a43c3061d7d87ec57f5b2b07640bc0"
   license "MIT"
   head "https://github.com/johntrandall/obsidian-vault-setup.git", branch: "main"
 
