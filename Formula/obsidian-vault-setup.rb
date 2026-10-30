@@ -18,7 +18,10 @@ class ObsidianVaultSetup < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.14")
+    # The dependency's own interpreter by path, not by PATH lookup: python@3.14 is pinned on this Mac (its 3.14.8_2
+    # upgrade removed the unversioned python3 on 2026-10-13), so installs run with --ignore-dependencies, which
+    # leaves the dependency's bin off the build PATH and made `python3.14 -m venv` fail silently (0.1.12, 2026-10-29).
+    venv = virtualenv_create(libexec, Formula["python@3.14"].opt_bin/"python3.14")
     venv.pip_install resources
 
     # The script finds config.example.yaml and finder/ two levels above itself, so it lives in
