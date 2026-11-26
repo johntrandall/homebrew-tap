@@ -13,7 +13,7 @@ class Civ6TurnAnnouncer < Formula
     libexec.install "src/civ6_turn_announcer"
     (bin/"civ6-turn-announcer").write <<~SH
       #!/bin/bash
-      PYTHONPATH="#{libexec}" exec "#{Formula["python@3.13"].opt_bin}/python3.13" -m civ6_turn_announcer "$@"
+      PYTHONPATH="#{libexec}" exec "#{formula_opt_bin("python@3.13")}/python3.13" -m civ6_turn_announcer "$@"
     SH
   end
 
