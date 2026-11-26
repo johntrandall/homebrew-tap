@@ -1,8 +1,8 @@
 class Civ6TurnAnnouncer < Formula
   desc "Spoken turn alerts for live multiplayer Civilization VI"
   homepage "https://github.com/johntrandall/civ6-turn-announcer"
-  url "https://github.com/johntrandall/civ6-turn-announcer/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "f721d6ba778e71f37177aadf3f44b27acdaed41802b1ea0d3a5192dcee45551a"
+  url "https://github.com/johntrandall/civ6-turn-announcer/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "67ad96ffcaaec68a92446e9490829b94a0f0386c730a36a3b757c5275d1fd0c4"
   license "MIT"
   head "https://github.com/johntrandall/civ6-turn-announcer.git", branch: "main"
 
@@ -15,6 +15,13 @@ class Civ6TurnAnnouncer < Formula
       #!/bin/bash
       PYTHONPATH="#{libexec}" exec "#{formula_opt_bin("python@3.13")}/python3.13" -m civ6_turn_announcer "$@"
     SH
+  end
+
+  service do
+    run [opt_bin/"civ6-turn-announcer"]
+    keep_alive true
+    log_path var/"log/civ6-turn-announcer.log"
+    error_log_path var/"log/civ6-turn-announcer.log"
   end
 
   test do
