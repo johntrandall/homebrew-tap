@@ -1,8 +1,8 @@
 class Civ6TurnAnnouncer < Formula
   desc "Spoken turn alerts for live multiplayer Civilization VI"
   homepage "https://github.com/johntrandall/civ6-turn-announcer"
-  url "https://github.com/johntrandall/civ6-turn-announcer/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "67ad96ffcaaec68a92446e9490829b94a0f0386c730a36a3b757c5275d1fd0c4"
+  url "https://github.com/johntrandall/civ6-turn-announcer/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "a07bbc98cbfd7348a3ead6a3b77bcac8a16b7ecd9dd2d7ce4d11d4136d9c4fa5"
   license "MIT"
   head "https://github.com/johntrandall/civ6-turn-announcer.git", branch: "main"
 
@@ -22,6 +22,13 @@ class Civ6TurnAnnouncer < Formula
     keep_alive true
     log_path var/"log/civ6-turn-announcer.log"
     error_log_path var/"log/civ6-turn-announcer.log"
+  end
+
+  def caveats
+    <<~EOS
+      To start it at login under its own name in System Settings > Login Items:
+        civ6-turn-announcer --install-login-item
+    EOS
   end
 
   test do
