@@ -1,8 +1,8 @@
 class Civ6TurnAnnouncer < Formula
   desc "Spoken turn alerts for live multiplayer Civilization VI"
   homepage "https://github.com/johntrandall/civ6-turn-announcer"
-  url "https://github.com/johntrandall/civ6-turn-announcer/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "a07bbc98cbfd7348a3ead6a3b77bcac8a16b7ecd9dd2d7ce4d11d4136d9c4fa5"
+  url "https://github.com/johntrandall/civ6-turn-announcer/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "73a1a811c962419321927df0edef007fa29133b0ddc12accfcd8f98ce9284a13"
   license "MIT"
   head "https://github.com/johntrandall/civ6-turn-announcer.git", branch: "main"
 
